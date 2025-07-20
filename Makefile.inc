@@ -139,14 +139,14 @@ CPPFLAGS  += -I$(DIST_INCDIR)/cores
 #CPPFLAGS += $(addprefix -I, $(shell find $(DIST_INCDIR) -type d))
 
 TEENSYLIBS_INCLUDE_LIST = Adafruit_SSD1306 Adafruit_SH1106 Adafruit-GFX-Library Adafruit_BusIO globalCompat Bounce2 \
-                          Encoder Wire SPI MIDI TeensyThreads WDT_T4 EEPROM Crypto Teensy-4.x-Quad-Encoder-Library LittleFS \
+                          Encoder Wire SPI MIDI TeensyThreads WDT_T4 EEPROM Teensy-4.x-Quad-Encoder-Library LittleFS \
                           TeensyDebug
 TEENSYLIBS_INCLUDE_PATHS = $(addprefix -I$(DIST_INCDIR)/, $(TEENSYLIBS_INCLUDE_LIST))
 CPPFLAGS += $(TEENSYLIBS_INCLUDE_PATHS)
 
 # Teensy library list for the linker
 TEENSY_CORE_LIBS = Adafruit_SSD1306 Adafruit_SH1106 Adafruit-GFX-Library Adafruit_BusIO Bounce2 Encoder Teensy-4.x-Quad-Encoder-Library Wire \
-    SPI MIDI EEPROM Crypto TeensyThreads LittleFS cores
+    SPI MIDI EEPROM TeensyThreads LittleFS cores
 
 # note ARM EABI compiler doesn't support -march option
 CFLAGS   += -std=gnu99 $(COMMON_FLAGS)
